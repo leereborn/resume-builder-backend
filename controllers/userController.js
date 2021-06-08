@@ -20,8 +20,8 @@ const get = (req, res) => {
     if (req.decodedToken===id){
         User.find(id)
             .then(data=>{
-                console.log({success: true, data});
-                res.json({success: true, data});
+                console.log({success: true, data:{email:data.email}});
+                res.json({success: true, data:{email:data.email}});
             })
             .catch(err=>{
                 console.error({success: false, err});
