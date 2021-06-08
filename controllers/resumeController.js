@@ -3,9 +3,11 @@ const Resume = require('../models/Resume');
 const create_post = (req, res) => {
     const {email, name, content} = req.body
     if (email===undefined){
+        console.error({success: false, err:{msg:"Email must be provided."}});
         return res.status(400).json({success: false, err:{msg:"Email must be provided."}});
     }
     if (req.body.content===undefined){
+        console.error({success: false, err:{msg:"Content must be provided."}});
         return res.status(400).json({success: false, err:{msg:"Content must be provided."}});
     }
     
