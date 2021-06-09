@@ -29,10 +29,10 @@ email(string): required\
 password(string): required
 ### deleteUser(email)
 parameters:\
-email(string): required\
+email(string): required
 ### getUser(email)
 parameters:\
-email(string): required\
+email(string): required
 ### createResume(email, name, content)
 parameters:\
 email(string): required\
@@ -48,11 +48,11 @@ content(JSON): required
 Find resumes by email or by both email and name.\
 parameters:\
 email(string): required\
-name(string): optional\
+name(string): optional
 ### deleteResume(email, name)
 parameters:\
 email(string): required\
-name(string): required\
+name(string): required
 
 ### Returns of all APIs:
 A JSON object provides whether request is successful and corresponding information. (e.g. { success: true, data} or { success: false, err})
@@ -68,3 +68,16 @@ updateResume: PUT /resumes\
 deleteResume: DELETE /resumes/?email&name
 login: POST /session\
 logout: DELETE /ssesion
+
+## Deployment Instruction
+### Local
+- Install node
+- [Setup and start dynamodb local](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html)
+- Add .env file to inclue: DB_REGION, DB_ENDPOINT, JWT_SECRET_KEY, JWT_EXPIRES_SECONDS, DB_LOCAL=true.
+### Production on AWS
+- Setup and start dynamodb
+- Setup ec2 instance
+- Add .env file to inclue: JWT_SECRET_KEY, JWT_EXPIRES_SECONDS, DB_LOCAL=true, DB_REGION, DB_KEY_ID, DB_KEY.
+- Install node and pm2
+- sudo pm2 start app.js
+
