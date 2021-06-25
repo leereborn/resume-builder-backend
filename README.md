@@ -77,7 +77,7 @@ logout: DELETE /ssesion
 ### Production on AWS
 - Setup and start dynamodb
 - Setup ec2 instance
-- Add .env file to inclue: JWT_SECRET_KEY, JWT_EXPIRES_SECONDS, DB_LOCAL=true, DB_REGION, DB_KEY_ID, DB_KEY.
+- Add .env file to inclue: JWT_SECRET_KEY, JWT_EXPIRES_SECONDS, DB_LOCAL=false, DB_REGION, DB_KEY_ID, DB_KEY.
 - Install node and pm2
 - sudo pm2 start app.js
 
